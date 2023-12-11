@@ -5,3 +5,5 @@ with open('account.txt', 'r') as accounts:
         all_values.extend(values)
 for value in all_values:
     print(value)
+
+
