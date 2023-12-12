@@ -7,8 +7,10 @@ import time
 
 browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 browser.get("https://adidas.de")
+#browser.get("https://www.opera.com/download")
 time.sleep(5)
-cookies = browser.find_element(By.LINK_TEXT, 'I ACCEPT FUNCTIONAL AND MARKETING COOKIES ETC.').click
-#cookies = browser.find_element(By.XPATH, "//span[contains(text(),'I ACCEPT FUNCTIONAL AND MARKETING COOKIES ETC.')]").click
-#register_button = browser.find_element(By.LINK_TEXT, 'werde mitglied').click
-time.sleep(10)
+#cookies = browser.find_element(By.LINK_TEXT, 'Accept cookies').click()
+#cookies = browser.find_element(By.XPATH, "//span[contains(text(),'I ACCEPT FUNCTIONAL AND MARKETING COOKIES ETC.')]").click()
+#browser.find_element(By.LINK_TEXT, 'werde mitglied').click()
+browser.find_element(By.XPATH,"//span[text()='I accept functional and marketing cookies etc.']").click()
+time.sleep(3)
