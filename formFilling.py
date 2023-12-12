@@ -8,8 +8,8 @@ import time
 
 browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 browser.get("https://adidas.de")
-#browser.get("https://www.opera.com/download")
 time.sleep(5)
 browser.find_element(By.XPATH,"//span[text()='I accept functional and marketing cookies etc.']").click()
 browser.find_element(By.LINK_TEXT, 'werde mitglied').click()
+#email = browser.find_element(By.ID, "email")
 time.sleep(3)
