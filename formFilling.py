@@ -4,7 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from accountManaging import account_data
+from seleniumbase import SB
 import time
+#import undetected_chromedriver as uc
 # TODO: FUNCKIÓKBA RENDEZNI MINDENT 
 options = Options()
 options.add_experimental_option("excludeSwitches",["enable-automation"])
@@ -19,13 +21,6 @@ browser.get("https://adidas.de")
 time.sleep(5) #WAIT FOR SELECTOR?
 
 browser.find_element(By.XPATH,"//span[text()='I accept functional and marketing cookies etc.']").click()
-#browser.execute_script("window.scrollTo(0,document.documentElement.scrollHeight)")
-#time.sleep(2)
-#browser.execute_script("window.scrollTo(0,-document.documentElement.scrollHeight)")
-#browser.execute_script("window.scrollTo(0,document.documentElement.scrollHeight)")
-#time.sleep(2)
-#browser.execute_script("window.scrollTo(0,-document.documentElement.scrollHeight)")
-#time.sleep(5)
 
 browser.find_element(By.LINK_TEXT, 'werde mitglied').click()
 time.sleep(3)
@@ -33,5 +28,4 @@ time.sleep(3)
 email = browser.find_element(By.ID, "email")
 email.send_keys(account_data[2])
 browser.find_element(By.XPATH,"//span[text()='WEITER']").click()
-
-time.sleep(200)
+time.sleep(3)
